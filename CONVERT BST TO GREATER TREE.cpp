@@ -1,0 +1,20 @@
+
+class Solution
+{
+public:
+     int sum = 0;
+     TreeNode *convertBST(TreeNode *root)
+     {
+
+          if (root != NULL)
+          {
+               convertBST(root->right);
+               sum += root->val;
+
+               root->val = sum;
+               convertBST(root->left);
+          }
+          return root;
+     }
+};
+// LEETCODE PROBLEM - 538
